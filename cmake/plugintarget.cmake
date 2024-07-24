@@ -3,6 +3,7 @@ add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_${CMAKE_CXX_STANDARD})
 
 if(EXISTS "${CMAKE_SOURCE_DIR}/extern/CommonLibSF")
+        set(SFSE_BUILD_TESTS OFF CACHE BOOL "Disable CommonLibSF build tests")
         add_subdirectory("${CMAKE_SOURCE_DIR}/extern/CommonLibSF" CommonLibSF EXCLUDE_FROM_ALL)
 else()
         find_package(CommonLibSF REQUIRED)
