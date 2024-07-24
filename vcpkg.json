@@ -9,6 +9,7 @@
       "description": "SFSE plugin",
       "dependencies": [
         "commonlibsf",
+        "spdlog",
         "boost-algorithm"
       ]
     }
