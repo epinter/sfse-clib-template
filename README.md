@@ -12,6 +12,10 @@
 - [Visual Studio Community 2022](https://visualstudio.microsoft.com/vs/community/)
 - [CommonLibSF](https://github.com/Starfield-Reverse-Engineering/CommonLibSF)
 
+#### ***CommonLibSF***
+
+To use CommonLibSF as a git-submodule instead of overlay-ports, clone it to extern/CommonLibSF and edit vcpkg.json removing "commonlibsf" and adding its dependencies.
+
 ## ***Building***
 
 In `Developer Command Prompt for VS 2022` or `Developer PowerShell for VS 2022`, run:
