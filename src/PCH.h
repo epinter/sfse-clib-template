@@ -144,9 +144,7 @@
 #include <REL/Relocation.h>
 
 // winapi
-#include <ShlObj_core.h>
 #include <Windows.h>
-#include <Psapi.h>
 
 #define DLLEXPORT extern "C" [[maybe_unused]] __declspec(dllexport)
 
