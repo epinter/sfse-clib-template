@@ -2,7 +2,12 @@
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_${CMAKE_CXX_STANDARD})
 
-if(EXISTS "${CMAKE_SOURCE_DIR}/extern/CommonLibSF")
+find_path(CommonLibSFPath "include/REL/Relocation.h"
+                PATHS   "${CMAKE_SOURCE_DIR}/extern/CommonLibSF"
+                        "${CMAKE_SOURCE_DIR}/external/CommonLibSF" NO_DEFAULT_PATH)
+
+if(EXISTS "${CommonLibSFPath}")
+        message("*** CommonLibSF found at ${CommonLibSFPath}")
         set(SFSE_BUILD_TESTS OFF CACHE BOOL "Disable CommonLibSF build tests")
         add_subdirectory("${CMAKE_SOURCE_DIR}/extern/CommonLibSF" CommonLibSF EXCLUDE_FROM_ALL)
 else()
